@@ -4064,3 +4064,96 @@ Gradient Background colors
     white-space: normal!important;
   }
 }
+.col-md-9-register,.col-md-9-edit{
+  position: relative;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-md-9-register,.col-md-9-edit{
+  position: relative;
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-md-9-register .box-title,.col-md-9-edit .box-title {
+  display: inline-block;
+  font-size: 26px;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.col-md-9-register label{
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.col-md-9-edit label{
+  display: inline;
+  font-size: 18px;
+  font-weight: 100;
+}
+.col-md-9-edit input{
+  display: inline;
+  width: 70%;
+  font-size:16px;
+  margin-left: 20px;
+}
+
+.col-md-9-edit input.btn{
+  width: 20%;
+  font-size: 16px;
+  display: inline;
+  min-height: 34px;
+
+
+}
+
+
+
+.col-md-9-register .btn{
+  width: 30%;
+  font-size: 16px;
+  margin-left:auto;
+  margin-right: auto;
+  display: block;
+  min-height: 40px;
+
+}
+
+.col-md-9-edit input.table-btn,.col-md-9-edit input.search{
+  font-size: 16px;
+  display: inline;
+  min-height: 34px;
+  background-color: #3c8dbc;
+  border-color: #367fa9;
+  box-shadow: none;
+  border: 1px solid transparent;
+  color:#fff;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+.col-md-9-edit input.table-btn{
+  
+  display: block;
+}
+
+.col-md-9-edit input.search{
+  display: inline;
+  margin-top: -7px;
+  margin-left: 10px;
+  margin-right: 0px;
+  min-height: 20px;
+}
