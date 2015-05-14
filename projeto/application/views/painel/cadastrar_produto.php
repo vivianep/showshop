@@ -10,15 +10,16 @@
                   <h3 class="box-title">Adicionar produto</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form"  accept-charset="utf-8" action="http://localhost/showshop/projeto/index.php/produto/salvar_dados" method="POST">
                   <div class="box-body">
                     <div class="form-group">
+                      <input type="hidden" name="codloja" value="1">
                       <label for="exampleInputEmail1">Nome*</label>
                       <input type="text" class="form-control" name="nome" placeholder="Título do produto">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Serial</label>
-                      <input type="text" class="form-control" name="nome" placeholder="Digite o serial do produto">
+                      <input type="text" class="form-control" name="serial" placeholder="Digite o serial do produto">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Tipo do Produto*</label>
@@ -54,8 +55,8 @@
                       
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Desconto em porcentagem(Ex:10)*</label>
-                      <input type="text" class="form-control" name="desc" placeholder="Desconto">
+                      <label for="exampleInputEmail1">Descrição do Produto*</label>
+                      <textarea type="text" class="form-control" name="descr" placeholder="Descrição"> </textarea>
                       
                     </div>
                     

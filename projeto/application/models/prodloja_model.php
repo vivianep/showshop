@@ -8,6 +8,10 @@ class Prodloja_Model extends CI_Model {
 		$this->db->from('prodloja');
 		return $this->db->get()->result();
 	}
+
+	
+
+
 	
 	public function post($itens){
 		$res = $this->db->insert('prodloja', $itens);

@@ -4130,7 +4130,7 @@ Gradient Background colors
 
 }
 
-.col-md-9-edit input.table-btn,.col-md-9-edit input.search{
+.col-md-9-edit button.table-btn,.col-md-9-edit input.search{
   font-size: 16px;
   display: inline;
   min-height: 34px;

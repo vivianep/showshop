@@ -38,8 +38,9 @@
                                   <td contenteditable='true'>200</td>
                                   <td contenteditable='true'>M</td>
                                   <td contenteditable='true'>Adidas</td>
-                                  <td><input class="table-btn btn_primary" type="submit" value="Editar"></td>
-                                </form>
+                                  </form>
+                                  <td><button id="edit-btn"class="table-btn btn_primary"  data-toggle="modal" data-target="#myModal">Editar</button></td>
+
 
                                 
                               </tr>
@@ -51,3 +52,16 @@
                 
           </section>
         </div>
+        <div id="modal-edit-prod"class="modal fade"></div>
+
+                             
+
+<script type="text/javascript">                       
+  $(function() {
+    $("#edit-btn").click(function(){
+      $("#modal-edit-prod").load("modal_edit").modal();
+    })
+  });
+  
+
+</script>

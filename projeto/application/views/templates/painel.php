@@ -30,7 +30,10 @@
     <link href="<?php echo base_url('assets/painel/plugins/daterangepicker/daterangepicker-bs3.css')?>" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="<?php echo base_url('assets/painel/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')?>" rel="stylesheet" type="text/css" />
+    <script src="<?php echo base_url('assets/painel/plugins/jQuery/jQuery-2.1.3.min.js')?>"></script>
     <script src="dist/js/new_function.js"></script>
+    
+    <script src="<?php echo base_url('assets/painel/bootstrap/js/bootstrap.min.js')?>"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -129,13 +132,13 @@
           <ul class="sidebar-menu">
             <li class="header">NAVEGAÇÃO</li>
             <li>
-              <a href="<?php echo base_url('index.php/painel/produtos')?>">
+              <a href="<?php echo base_url('index.php/produto/listar_produtos')?>">
                 <i class="fa fa-th"></i> <span>Produtos</span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url('index.php/painel/create_product')?>"><i class="fa fa-circle-o"></i> Criação</a></li>
-                <li><a href="<?php echo base_url('index.php/painel/edit_product')?>"><i class="fa fa-circle-o"></i> Edição</a></li>
-                <li><a href="<?php echo base_url('index.php/painel/remove_product')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
+                <li><a href="<?php echo base_url('index.php/produto/cadastrar_produto')?>"><i class="fa fa-circle-o"></i> Criação</a></li>
+                <li><a href="<?php echo base_url('index.php/produto/editar_produto')?>"><i class="fa fa-circle-o"></i> Edição</a></li>
+                <li><a href="<?php echo base_url('index.php/produto/remover_produto')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
               </ul>
             </li> 
           </ul>
@@ -157,7 +160,7 @@
         <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
-    <script src="<?php echo base_url('assets/painel/plugins/jQuery/jQuery-2.1.3.min.js')?>"></script>
+
     <!-- Bootstrap 3.3.2 JS -->
     <script src="<?php echo base_url('assets/painel/bootstrap/js/bootstrap.min.js')?>" type="text/javascript"></script>
     <!-- SlimScroll -->
