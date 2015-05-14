@@ -14,7 +14,6 @@ class Produto_Model extends CI_Model {
 		return $query ;
 	}
 
-
 	public function post($itens){
 		$res = $this->db->insert('produto', $itens);
 		return $res;

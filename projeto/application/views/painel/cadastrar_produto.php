@@ -24,9 +24,15 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Tipo do Produto*</label>
                       <select class="form-control" name="tipo">
-                        <option value="vestimenta">Vestimenta</option>
-                        <option value="calcado">Calçado</option>
-                        <option value="celular">Celular</option>
+                        <option value="Acessórios p/ Celular">Acessórios p/ Celular</option>
+                        <option value="Calçado">Calçado</option>
+                        <option value="Câmera">Câmera</option>
+                        <option value="Celular">Celular</option>
+                        <option value="Instrumento Musical">Instrumento Musical</option>
+                        <option value="Material Escolar">Material Escolar</option>
+                        <option value="Som">Som</option>
+                        <option value="Televisão">Televisão</option>
+                        <option value="Vestimenta">Vestimenta</option>
                       </select>
                     </div>
                     <div class="form-group">
@@ -34,8 +40,8 @@
                       <select class="form-control" name="tam">
                         <option value="PP">PP</option>
                         <option value="G">G</option>
-                        <option value="40">40</option>
                         <option value="37">37</option>
+                        <option value="40">40</option>
                       </select>
                     </div>
                     <div class="form-group">
