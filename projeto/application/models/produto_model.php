@@ -25,9 +25,21 @@ class Produto_Model extends CI_Model {
 	    return $itens['id'];
 	}
 	
-	public function delete($id){
-		$this->db->where('cod', $id);
-		return $this->db->delete('produto');		
+	public function delete($condicao = array()) {
+		if ($condicao != NULL) {
+			return $this->db->delete('produto', $condicao);
+		}
+		
+		/*$this->db->where('cod', $id);
+		return $this->db->delete('produto');*/
+
+		/*$host = "localhost";
+		$user = "root";
+		$pass = "admin";
+		$banco = "showshop";
+		$conexao = mysql_connect($host, $user, $pass) or die(mysql_error());
+		mysql_select_db($banco) or die(mysql_error());
+		$sql = mysql_query("DELETE FROM produto where cod = '$id'");*/
 	}
 }
 

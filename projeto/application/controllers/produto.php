@@ -64,10 +64,12 @@ class Produto extends CI_Controller {
 		redirect("produto/index");
 	}
 
-	public function delete_produto() {
-		//if ($this->input->post('cod') > 0) { //verifica se enviou o formulário
-			//$this->Produto_model->do_delete(array('cod'=>$this->input->post('cod'))); //chama a função de excluir dados no BD
-		//}
+	public function deletar_dados() {
+		if ($this->input->post('cod') > 0) { //verifica se enviou o formulário
+			$cod = $this->input->post('cod');
+			$condicoes = array('cod' => $cod);
+			$this->Produto_Model->delete($condicoes); //chama a função de excluir dados no BD
+		}
 		redirect("produto/remover_produto");
 	}
 }

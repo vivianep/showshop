@@ -13,7 +13,7 @@
 							<input type="text" class="form-control" name="nome" placeholder="Título do produto"/>
 							<input class="search btn btn-primary" type="submit" value="Pesquisar"/>
 						</div> <!-- /.form-group -->
-					</form>
+					</form> 
 					
 					<div id="invisible-table">
 						<div class="box-header">
@@ -40,21 +40,19 @@
 									<td><?php echo $row->tam; ?></td>
 									<td><?php echo $row->marca; ?></td>
 									<td> 
-										<form role="form" accept-charset="utf-8" action="http://localhost/showshop/projeto/index.php/produto/delete_produto" method="POST">
+										<?php
+											//echo form_open('painel/delete');
+											//echo form_hidden('cod', $row->cod);
+											//echo form_submit(array('name'=>'excluir'), 'Excluir');
+											//echo form_close();									
+										?>
+										<form role="form" accept-charset="utf-8" action="http://localhost/showshop/projeto/index.php/produto/deletar_dados/" method="POST">
 											<input type="hidden" name="cod" value="<?php echo $row->cod;?>">
 											<input class="table-btn btn_primary" type="submit" value="Excluir">
 										</form>
-									</td> <!-- <td></td> -->
+									</td>
 								</tr>
-							<?php }?>	
-								<!--<form method="post">
-								<td >Camiseta Branca</td>
-								<td >Vestimenta</td>
-								<td >200</td>
-								<td >M</td>
-								<td >Adidas</td>
-								
-								</form>-->
+							<?php } ?>	
 						</tbody>
 					</table>
 				<div>
