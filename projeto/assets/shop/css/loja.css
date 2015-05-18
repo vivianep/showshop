@@ -117,3 +117,7 @@ a:hover #icone-carrinho{
 .div-produtos{
 	margin-top: 20px
 }
+
+#div-logo h2, #div-logo h3{
+	display: inline
+}

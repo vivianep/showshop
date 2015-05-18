@@ -14,12 +14,14 @@
 	</div>
 	<div class="col-md-9" id="div-banner"></div>
 </div>
+
 <div class="row" class="div-produtos">
 	<div class="col-md-3 item-produto"></div>
 	<div class="col-md-3 item-produto"></div>
 	<div class="col-md-3 item-produto"></div>
 	<div class="col-md-3 item-produto"></div>
 </div>
+
 <div class="row" class="div-produtos">
 	<div class="col-md-3 item-produto"></div>
 	<div class="col-md-3 item-produto"></div>

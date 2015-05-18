@@ -15,10 +15,10 @@
 			</div>
 		</div>
 		<div class="row" id="topo2">
-			<div class="col-md-2" id="div-logo">
-				<h2 class="logo">Show<strong>Shop</strong></h2></h2>
+			<div class="col-md-4" id="div-logo">
+				<h2 class="logo">Show<strong>Shop</strong></h2> <?php if(isset($loja)) echo '<h3>'.$loja->nome.'</h3>'; ?>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-6">
 			</div>
 			<div class="col-md-2">
 				<a href="#">
