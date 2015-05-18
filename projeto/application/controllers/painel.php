@@ -7,8 +7,23 @@ class Painel extends CI_Controller {
 		$this->template->load('templates/painel', 'painel/principal');
 	}
 	
-	public function produtos()
+	
+
+	public function modal_edit($cod_prod)
 	{
-		$this->template->load('templates/painel', 'painel/produtos');
+		$dados = array();
+		$this->parser->parse('painel/modal_edit', $dados);
+		//$this->template->load('templates/painel', 'painel/modal_edit');
 	}
+
+	public function create_product()
+	{
+		$this->template->load('templates/painel', 'painel/create_product');
+	}
+
+	public function remove_product()
+	{
+		$this->template->load('templates/painel', 'painel/remove_product');
+	}
+
 }

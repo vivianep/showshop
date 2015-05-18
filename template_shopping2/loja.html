@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ShowShop</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+		<link rel="stylesheet" href="css/loja.css"/>
+	</head>
+	<body>
+		<div class="row" id="topo1">
+			<div class="col-md-9"></div>
+			<div class="col-md-3">
+				<a href="#">MINHA CONTA</a> | 
+				<a href="#" data-toggle="modal" data-target="#modal-login">LOGIN</a>
+			</div>
+		</div>
+		<div class="row" id="topo2">
+			<div class="col-md-2" id="div-logo">
+				<h2 class="logo">Show<strong>Shop</strong></h2></h2>
+			</div>
+			<div class="col-md-8">
+			</div>
+			<div class="col-md-2">
+				<a href="#">
+					<img src="img/shopping-bag.png" alt="Suas compras" id="icone-carrinho" title="Suas compras">
+				</a>
+			</div>
+		</div>
+		<div id="corpo">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="row">
+						<div class="col-md-12" id="menu-loja">
+							<ul class="nav nav-pils nav-stack">
+								<li><a href="#">Calçados</a></li>
+								<li><a href="#">Roupas</a></li>
+								<li><a href="#">Eletrônicos</a></li>
+								<li><a href="#">Cama e mesa</a></li>
+								<li><a href="#">Utilidades</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9" id="div-banner"></div>
+			</div>
+			<div class="row" class="div-produtos">
+				<div class="col-md-3 item-produto"></div>
+				<div class="col-md-3 item-produto"></div>
+				<div class="col-md-3 item-produto"></div>
+				<div class="col-md-3 item-produto"></div>
+			</div>
+			<div class="row" class="div-produtos">
+				<div class="col-md-3 item-produto"></div>
+				<div class="col-md-3 item-produto"></div>
+				<div class="col-md-3 item-produto"></div>
+				<div class="col-md-3 item-produto"></div>
+			</div>
+		</div>
+		<div class="row" id="rodape1">
+			<div class="col-md-3">
+				<ul class="lista-rodape">
+					<li><a href="#">Política de uso</a></li>
+					<li><a href="#">Fale conosco</a></li>
+					<li><a href="#">Perguntas frequentes</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="rodape2">
+			
+		</div>
+		
+		<!-- MODAL LOGIN -->
+		<div class="modal fade" id="modal-login">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Acesse sua conta</h4>
+					</div>
+					<div class="modal-body">
+						<form action="post">
+							<div class="form-group">
+								<label for="loginemail">Email</label>
+								<input type="email" name="loginemail" placeholder="Informe seu email" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="loginsenha">Senha</label>
+								<input type="password" name="loginsenha"" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<p>Ainda não é cadastrado? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-cadastro">Cadastre-se agora.</a></p>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="button" class="btn btn-primary">Acessar</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- FIM MODAL LOGIN-->
+		
+		<!-- MODAL CADASTRO  -->
+		<div class="modal fade" id="modal-cadastro">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Cadastre-se no <strong>ShowShop</strong></h4></h4>
+					</div>
+					<div class="modal-body">
+						<form action="post">
+							<div class="form-group">
+								<label for="cadastroemail">Email</label>
+								<input type="email" name="cadastroemail" placeholder="Digite aqui seu email de acesso" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="cadastrosenha">Senha</label>
+								<input type="password" name="cadastrosenha"" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<label for="cadastroconfirmasenha">Confirme a senha</label>
+								<input type="password" name="cadastroconfirmasenha"" class="form-control"/>
+							</div>
+							<div class="form-group">
+								<p>Já tem cadastro? Então efetue <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-login">login.</a></p>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="button" class="btn btn-primary">Cadastrar</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- FIM MODAL CADASTRO-->
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/principal.js"></script>
+</html>
