@@ -27,13 +27,13 @@ class Usuario extends CI_Controller {
 		$retorno = $this->Loginss_Model->post($dados);
 
 		if($retorno){
-			//$this->session->set_flashdata('flashSuccess', 'Usuario cadastrado com sucesso.');
-			//$this->session->set_userdata('email', $email);
+			$this->session->set_flashdata('flashSuccess', 'Usuario cadastrado com sucesso.');
+			$this->session->set_userdata('mastercode', $masterId);
 			echo"<script type='text/javascript'>";
 			echo "alert('Seu cadastro foi realizado com sucesso');";
 			echo "</script>";
 		} else {
-			//$this->session->set_flashdata('flashError','Ocorreu um erro ao gravar os dados.');
+			$this->session->set_flashdata('flashError','Ocorreu um erro ao gravar os dados.');
 			echo"<script type='text/javascript'>";
 			echo "alert('error');";
 			echo "</script>";
@@ -53,7 +53,7 @@ class Usuario extends CI_Controller {
 
 		if ($usuario) {
 			if($usuario->senha == $senhaCrypt){
-				$this->Loginss_Model->delete($usuario->id);
+				$this->Loginss_Model->delete($dados);
 				$this->session->set_flashdata('flashError', 'Usuario excluido do sistema');
 			} else {
 				$this->session->set_flashdata('flashError', 'A senha esta incorreta');
