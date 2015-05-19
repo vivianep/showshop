@@ -3,7 +3,7 @@
 class Loja_Model extends CI_Model {
 	
 	public function get($condicao = array()){
-		$this->db->select('id, cod, nome, tipo, logo');
+		$this->db->select('cod, nome, tipo, logo');
 		$this->db->where($condicao);
 		$this->db->from('loja');
 		return $this->db->get()->result();
