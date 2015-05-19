@@ -54,6 +54,7 @@ class Shop extends CI_Controller {
 		
 		$this->session->set_userdata('codloja', $cod);
 		$this->session->set_userdata('masterid', $masterid);
+		$this->session->set_userdata('nomeusuario', $nomeusuario);
 		
 		$dadosusuario = array(
 			'usuario' => $usuario,

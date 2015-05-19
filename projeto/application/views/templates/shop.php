@@ -118,7 +118,7 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title">Cadastre-se no <strong>ShowShop</strong></h4></h4>
 					</div>
-					<form action="index.php/shop/cadastrar_loja" method="post" enctype="multipart/form-data">
+					<form action="<?php echo base_url('index.php/shop/cadastrar_loja')?>" method="post" enctype="multipart/form-data">
 						<div class="modal-body">						
 							<div class="row">
 								<div class="form-group col-md-12">

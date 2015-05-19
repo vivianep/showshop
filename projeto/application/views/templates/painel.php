@@ -47,7 +47,7 @@
     <div class="wrapper">
       
       <header class="main-header">
-        <a href="../../index2.html" class="logo"><b>Show</b>Shop</a>
+        <a href="<?php echo base_url('index.php/shop');?>" class="logo"><b>Show</b>Shop</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -115,7 +115,7 @@
               <img src="<?php echo base_url('assets/painel/dist/img/user2-160x160.jpg')?>" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Alexander Pierce</p>
+              <p><?php echo $this->session->userdata('nomeusuario'); ?></p>
             </div>
           </div>
           <!-- search form -->
