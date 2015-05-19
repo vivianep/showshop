@@ -7,8 +7,6 @@ class Painel extends CI_Controller {
 		$this->template->load('templates/painel', 'painel/principal');
 	}
 	
-	
-
 	public function modal_edit($cod_prod)
 	{
 		$dados = array();
@@ -25,5 +23,4 @@ class Painel extends CI_Controller {
 	{
 		$this->template->load('templates/painel', 'painel/remove_product');
 	}
-
 }

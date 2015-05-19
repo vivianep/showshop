@@ -109,6 +109,61 @@
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
 		<!-- FIM MODAL CADASTRO-->
+		
+		<!-- MODAL CADASTRO LOJA  -->
+		<div class="modal fade" id="modal-cadastro-loja">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Cadastre-se no <strong>ShowShop</strong></h4></h4>
+					</div>
+					<form action="index.php/shop/cadastrar_loja" method="post" enctype="multipart/form-data">
+						<div class="modal-body">						
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="nome">Nome da loja</label>
+									<input type="text" name="nome" class="form-control" placeholder="O nome da sua loja"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="tipo">Tipo</label>
+									<input type="text" name="tipo" class="form-control" placeholder="Qual o ramo de atuação da sua loja?"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="nomeusuario">Seu nome</label>
+									<input type="text" class="form-control"  name="nomeusuario" placeholder="Informe seu nome."/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label for="email">Email</label>
+									<input type="email" class="form-control"  name="email" placeholder="Informe seu email."/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-6">
+									<label for="usuario">Login</label>
+									<input type="text" class="form-control" name="usuario" placeholder="Informe um login de acesso."/>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="senha">Senha</label>
+									<input type="password" class="form-control"  name="senha"/>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+							<input type="submit" value="Cadastrar" class="btn btn-primary"/>
+						</div>
+					</form>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- FIM MODAL CADASTRO LOJA-->
 	</body>
 	<script src="<?php echo base_url('assets/shop/js/jquery.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/shop/js/bootstrap.min.js') ?>"></script>

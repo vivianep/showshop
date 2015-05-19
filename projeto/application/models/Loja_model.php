@@ -15,13 +15,13 @@ class Loja_Model extends CI_Model {
 	}
 
 	public function update($itens){
-		$this->db->where('id', $itens['id']);
+		$this->db->where('cod', $itens['cod']);
 	    $this->db->update('loja', $itens);
-	    return $itens['id'];
+	    return $itens['cod'];
 	}
 	
 	public function delete($id){
-		$this->db->where('id', $id);
+		$this->db->where('cod', $id);
 		return $this->db->delete('loja');		
 	}
 }

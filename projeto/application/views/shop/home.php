@@ -26,7 +26,7 @@
 				<li>Relatórios para decisões estratégicas.</li>
 				<li>Oferça variadas formas de pagamento.</li>
 			</ul>
-			<p><button class="btn btn-primary btn-lg" id="btn-cadastrar-loja">Quero cadastrar minha loja</button></p>
+			<p><button class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#modal-cadastro-loja">Quero cadastrar minha loja</button></p>
 		</div>	
 	</div>
 </div>
