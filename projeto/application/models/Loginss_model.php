@@ -11,7 +11,7 @@ class Loginss_Model extends CI_Model {
 	
 	public function post($itens){
 		$res = $this->db->insert('loginss', $itens);
-		return $this->db->insert_id();
+		return $res;
 	}
 
 	public function update($itens){
@@ -20,8 +20,7 @@ class Loginss_Model extends CI_Model {
 	    return $itens['id'];
 	}
 	
-	public function delete($id){
-		$this->db->where('id', $id);
-		return $this->db->delete('loginss');		
+	public function delete($condicao){
+		return $this->db->delete('loginss', $condicao);		
 	}
 }
