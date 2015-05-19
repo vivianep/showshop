@@ -6,8 +6,7 @@ class Usuario extends CI_Controller {
 		parent::__construct();
 		$this->layout= "";
 		$this->load->model('MasterId_model', 'MasterId_Model');
-		$this->load->model('Loginss_model', 'Loginss_Model');
-		//$this->load->model('MasterId_model', 'MasterId_Model');
+		$this->load->model('Loginss_model', 'Loginss_Model'); //$this->load->model('MasterId_model', 'MasterId_Model');
 	}
 
 	public function cadastrar_usuario_showshop(){		
@@ -16,12 +15,9 @@ class Usuario extends CI_Controller {
 		$masterId    = $this->MasterId_Model->post();
 		$nivelacesso = 1;
 		$usuario = $email;
-		$nome = "welsen";
-		
 		
 		$dados = array(
 			'usuario' => $usuario,
-			'nome' => $nome,
 			'email' => $email,
 			'senha' => $senha,
 			'mastercode' => $masterId,
