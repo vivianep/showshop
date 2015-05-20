@@ -140,7 +140,16 @@
                 <li><a href="<?php echo base_url('index.php/produto/editar_produto')?>"><i class="fa fa-circle-o"></i> Edição</a></li>
                 <li><a href="<?php echo base_url('index.php/produto/remover_produto')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
               </ul>
-            </li> 
+            </li>
+			<li>
+              <a href="<?php echo base_url('index.php/produto/listar_desconto')?>">
+                <i class="fa fa-th"></i> <span>Descontos</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?php echo base_url('index.php/desconto/cadastrar_desconto')?>"><i class="fa fa-circle-o"></i> Criação</a></li>
+                <li><a href="<?php echo base_url('index.php/desconto/remover_desconto')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
+              </ul>
+            </li> 			
           </ul>
         </section>
         <!-- /.sidebar -->
