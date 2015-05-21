@@ -22,26 +22,29 @@
 					  
 					<table id="example2" class="table table-bordered table-hover">
 						<thead>
+							
 							<tr>
-								<th>Produto</th>
-								<th>Desconto</th>
-								<th>Data Inicial</th>
-								<th>Data Final</th>
-								<th>Opções</th>
+								<th> <center> Produto      </center> </th>
+								<th> <center> Desconto     </center> </th>
+								<th> <center> Data Inicial </center> </th>
+								<th> <center> Data Final   </center> </th>
+								<th> <center> Opções       </center> </th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php foreach ($query->result() as $row){ ?>
 								<tr>								   
-									<td><?php echo $row->produto; ?></td>
-									<td><?php echo $row->desconto; ?></td>
-									<td><?php echo $row->datainicial; ?></td>
-									<td><?php echo $row->datafinal; ?></td>
+									<td> <?php echo '<center>'.$row->produto.'</center>'; ?>     </td>
+									<td> <?php echo '<center>'.$row->desconto.'% </center>'; ?>  </td>
+									<td> <?php echo '<center>'.$row->datainicial.'</center>'; ?> </td>
+									<td> <?php echo '<center>'.$row->datafinal.'</center>'; ?>   </td>
 									<td>
-										<form role="form" accept-charset="utf-8" action="<?php echo base_url('index.php/desconto/deletar_dados/'); ?>" method="POST">
-											<input type="hidden" name="cod" value="<?php echo $row->cod;?>">
-											<input class="table-btn btn_primary" type="submit" value="Excluir">
-										</form> 
+										<center>
+											<form role="form" accept-charset="utf-8" action="<?php echo base_url('index.php/desconto/deletar_dados/'); ?>" method="POST">
+												<input type="hidden" name="cod" value="<?php echo $row->cod;?>">
+												 <input class="table-btn btn_primary" type="submit" value="Excluir">
+											</form> 
+										</center>
 									</td>
 								</tr>
 							<?php } ?>	

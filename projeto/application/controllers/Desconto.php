@@ -31,9 +31,9 @@ class Desconto extends CI_Controller {
 		$this->template->load('templates/painel', 'painel/cadastrar_desconto', $data);
 	}
 
-	public function remover_desconto() {
+	public function remover_desconto() {		
 		$query=$this->Desconto_Model->get_desconto();
-		$data['query']=$query;
+		$data['query']= $query;
 		$this->template->load('templates/painel', 'painel/remover_desconto', $data);
 	}
 

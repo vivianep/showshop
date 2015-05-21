@@ -10,12 +10,7 @@ class Desconto_Model extends CI_Model {
 	}
 	
 	public function get_desconto(){		
-		/*$this->db->select('d.cod as cod, p.nome as nome, d.desconto as desconto, d.datainicial as datainicial, d.datafinal as datafinal');
-		$this->db->where('d.produto' => 'p.cod');
-		$this->db->from('desconto d, produto p');
-	
-		return $this->db->get()->result();*/
-		$query=$this->db->get('desconto');
+		$query = $this->db->query('select d.cod as cod, p.nome as produto, d.desconto, d.datainicial as datainicial, d.datafinal as datafinal from produto p, desconto d where d.produto = p.cod;');
 		return $query ;
 	}
 	
