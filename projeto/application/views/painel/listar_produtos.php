@@ -25,10 +25,10 @@
                               <tr>
                                
                                   <td><?php echo $row->nome; ?></td>
-                                  <td >Vestimenta</td>
-                                  <td >200</td>
-                                  <td >M</td>
-                                  <td >Adidas</td>
+                                  <td ><?php echo $row->tipo; ?></td>
+                                  <td ><?php echo $row->quantidade; ?></td>
+                                  <td ><?php echo $row->tam; ?></td>
+                                  <td ><?php echo $row->marca; ?></td>
                                 
                               </tr>
                               <?php }?>

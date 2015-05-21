@@ -10,20 +10,14 @@
                   <h3 class="box-title">Adicionar Desconto</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form"  accept-charset="utf-8" action="http://localhost/showshop/projeto/index.php/desconto/cadastrar_desconto" method="POST">
+                <form role="form"  accept-charset="utf-8" action="http://localhost/showshop/projeto/index.php/desconto/salvar_dados" method="POST">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Produto*</label>
                       <select class="form-control" name="produto">
-                        <option value="Acessórios p/ Celular">Acessórios p/ Celular</option>
-                        <option value="Calçado">Calçado</option>
-                        <option value="Câmera">Câmera</option>
-                        <option value="Celular">Celular</option>
-                        <option value="Instrumento Musical">Instrumento Musical</option>
-                        <option value="Material Escolar">Material Escolar</option>
-                        <option value="Som">Som</option>
-                        <option value="Televisão">Televisão</option>
-                        <option value="Vestimenta">Vestimenta</option>
+							<?php foreach ($query->result() as $row){ ?>
+								<option value="<?php echo $row->cod; ?>"><?php echo $row->serial." - ".$row->nome; ?></option>
+							<?php } ?>
                       </select>
                     </div>
 					<div class="form-group">

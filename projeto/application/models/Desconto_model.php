@@ -11,7 +11,8 @@ class Desconto_Model extends CI_Model {
 	
 	public function post($itens){
 		$res = $this->db->insert('desconto', $itens);
-		return $this->db->insert_id();
+		//return $this->db->insert_id();
+		return $res;
 	}
 
 	public function update($itens){
