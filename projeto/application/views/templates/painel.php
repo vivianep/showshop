@@ -3,7 +3,7 @@
   <html>
   <head>
     <meta charset="UTF-8">
-    <title>ShowSop | Painel administrativo</title>
+    <title>ShowShop | Painel administrativo</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="<?php echo base_url('assets/painel/bootstrap/css/bootstrap.css')?>" rel="stylesheet" type="text/css" />

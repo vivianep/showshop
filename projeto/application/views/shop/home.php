@@ -29,13 +29,14 @@
 			<p><button class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#modal-cadastro-loja">Quero cadastrar minha loja</button></p>
 		</div>	
 	</div>
+	
 </div>
 
 <div class="row" class="div-lojas">
 	<h3>Lojas</h3>
 	<?php
 		foreach($lojas as $l){			
-			echo '<div class="thumb-loja"><a href="'.base_url('index.php/shop/loja').'/'.$l->cod.'"><img src="'.base_url($l->logo).'"/></a></div>';
+			echo '<div class="thumb-loja"><a href="'.base_url('index.php/shop/loja').'/'.$l->cod.'"	 title="'.$l->nome.'"><img src="'.base_url($l->logo).'"/></a></div>';
 		}
 	?>
 </div>

@@ -11,7 +11,7 @@ class Shop extends CI_Controller {
 	
 	public function index()
 	{
-		$lojas = $this->Loja_Model->get();
+		$lojas = $this->Loja_Model->get(array('logo !=' => ''));
 		$dados = array();
 		$dados['lojas'] = $lojas;
 		$this->template->load('templates/shop', 'shop/home', $dados);
@@ -20,7 +20,10 @@ class Shop extends CI_Controller {
 	public function loja($cod)
 	{
 		$loja = $this->Loja_Model->get(array('cod'=>$cod));
-		$dados = array('loja'=>$loja[0]);
+		$categorias = $this->Loja_Model->get_categorias($cod);
+		$dados = array();
+		$dados['loja'] = $loja[0];
+		$dados['categorias'] = $categorias;
 		$this->template->load('templates/loja', 'shop/loja', $dados);		
 	}
 	

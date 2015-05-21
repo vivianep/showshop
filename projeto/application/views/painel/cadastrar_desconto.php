@@ -10,7 +10,7 @@
                   <h3 class="box-title">Adicionar Desconto</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form"  accept-charset="utf-8" action="http://localhost/showshop/projeto/index.php/desconto/salvar_dados" method="POST">
+                <form role="form"  accept-charset="utf-8" action="<?php echo base_url('index.php/desconto/salvar_dados')?>" method="POST">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Produto*</label>

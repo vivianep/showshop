@@ -3,11 +3,12 @@
 		<div class="row">
 			<div class="col-md-12" id="menu-loja">
 				<ul class="nav nav-pils nav-stack">
-					<li><a href="#">Calçados</a></li>
-					<li><a href="#">Roupas</a></li>
-					<li><a href="#">Eletrônicos</a></li>
-					<li><a href="#">Cama e mesa</a></li>
-					<li><a href="#">Utilidades</a></li>
+					<?php
+						foreach($categorias as $c){
+							echo '<li><a href="#">'.$c->tipo.'</a></li>';
+						}
+					?>
+					<li><a href="#">Tudo</a></li>
 				</ul>
 			</div>
 		</div>
