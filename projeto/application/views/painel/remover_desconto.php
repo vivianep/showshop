@@ -7,12 +7,12 @@
 				</div><!-- /.box-header -->
 				
 				<div class="box-body">
-					<form role="form" method="post" >
+					<form role="form" method="post" action="<?php echo base_url('index.php/desconto/buscar_desconto/'); ?>">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Nome</label>
-							<input type="text" class="form-control" name="nome" placeholder="Título do produto"/>
+							<input type="text" class="form-control" name="nome" value="<?php echo $nome; ?>"/> <!-- placeholder="Título do produto" -->
 							<input class="search btn btn-primary" type="submit" value="Pesquisar"/>
-						</div> <!-- /.form-group -->
+						</div>
 					</form> 
 					
 					<div id="invisible-table">
@@ -21,8 +21,7 @@
 					</div><!-- /.box-header -->
 					  
 					<table id="example2" class="table table-bordered table-hover">
-						<thead>
-							
+						<thead>							
 							<tr>
 								<th> <center> Produto      </center> </th>
 								<th> <center> Desconto     </center> </th>

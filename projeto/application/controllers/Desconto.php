@@ -63,6 +63,15 @@ class Desconto extends CI_Controller {
 		}
 		redirect("desconto/remover_desconto");
 	}
+	
+	public function buscar_desconto() {
+		$nome = $this->input->post('nome');
+		$query=$this->Desconto_Model->get_busca_desconto($nome);
+		$data['query']= $query;
+		$data['nome'] = $nome;
+		$this->template->load('templates/painel', 'painel/remover_desconto', $data);
+		//redirect("desconto/remover_desconto");
+	}
 }
 
 ?>

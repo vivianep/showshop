@@ -9,9 +9,14 @@ class Desconto_Model extends CI_Model {
 		return $this->db->get()->result();
 	}
 	
-	public function get_desconto(){		
+	public function get_desconto(){	
 		$query = $this->db->query('select d.cod as cod, p.nome as produto, d.desconto, d.datainicial as datainicial, d.datafinal as datafinal from produto p, desconto d where d.produto = p.cod;');
 		return $query ;
+	}
+	
+	public function get_busca_desconto($termo){		
+		$query = $this->db->query('select d.cod as cod, p.nome as produto, d.desconto, d.datainicial as datainicial, d.datafinal as datafinal from produto p, desconto d where d.produto = p.cod and p.nome LIKE \'%'.$termo.'%\'');
+		return $query;
 	}
 	
 	public function post($itens){
