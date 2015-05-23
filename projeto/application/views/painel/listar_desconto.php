@@ -7,7 +7,7 @@
 				</div><!-- /.box-header -->
 				
 				<div class="box-body">
-					<form role="form" method="post" action="<?php echo base_url('index.php/desconto/buscar_desconto2/'); ?>">
+					<form role="form" method="post" action="<?php echo base_url('index.php/desconto/buscar_desconto/'); ?>">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Nome</label>
 							<input type="text" class="form-control" name="nome" value="<?php echo $nome; ?>"/> <!-- placeholder="Título do produto" -->
@@ -28,7 +28,6 @@
 								<th> <center> Desconto     </center> </th>
 								<th> <center> Data Inicial </center> </th>
 								<th> <center> Data Final   </center> </th>
-								<th> <center> Opções       </center> </th>
 							</tr>
 						</thead>
 						<tbody>
@@ -39,14 +38,6 @@
 									<td> <?php echo '<center>'.$row->desconto.'% </center>'; ?>  </td>
 									<td> <?php echo '<center>'.$row->datainicial.'</center>'; ?> </td>
 									<td> <?php echo '<center>'.$row->datafinal.'</center>'; ?>   </td>
-									<td>
-										<center>
-											<form role="form" accept-charset="utf-8" action="<?php echo base_url('index.php/desconto/deletar_dados/'); ?>" method="POST">
-												<input type="hidden" name="cod" value="<?php echo $row->cod;?>">
-												 <input class="table-btn btn_primary" type="submit" value="Excluir">
-											</form> 
-										</center>
-									</td>
 								</tr>
 							<?php } ?>	
 						</tbody>

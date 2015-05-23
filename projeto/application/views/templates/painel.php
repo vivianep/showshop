@@ -146,8 +146,19 @@
                 <i class="fa fa-th"></i> <span>Descontos</span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url('index.php/desconto/cadastrar_desconto')?>"><i class="fa fa-circle-o"></i> Criação</a></li>
-                <li><a href="<?php echo base_url('index.php/desconto/remover_desconto')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
+                <li><a href="<?php echo base_url('index.php/desconto/listar_desconto')?>"><i class="fa fa-circle-o"></i> Listar</a></li>
+                <li><a href="<?php echo base_url('index.php/desconto/cadastrar_desconto')?>"><i class="fa fa-circle-o"></i> Criar</a></li>
+                <li><a href="<?php echo base_url('index.php/desconto/remover_desconto')?>"><i class="fa fa-circle-o"></i> Excluir</a></li>
+              </ul>
+            </li> 	
+			<li>
+              <a href="<?php echo base_url('index.php/produto/listar_leilao')?>">
+                <i class="fa fa-th"></i> <span>Leilões</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?php echo base_url('index.php/leilao/listar_leilao')?>"><i class="fa fa-circle-o"></i> Listar</a></li>
+                <li><a href="<?php echo base_url('index.php/leilao/cadastrar_leilao')?>"><i class="fa fa-circle-o"></i> Criar</a></li>
+                <li><a href="<?php echo base_url('index.php/leilao/remover_leilao')?>"><i class="fa fa-circle-o"></i> Excluir</a></li>
               </ul>
             </li> 			
           </ul>
