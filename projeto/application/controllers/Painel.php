@@ -23,4 +23,9 @@ class Painel extends CI_Controller {
 	{
 		$this->template->load('templates/painel', 'painel/remove_product');
 	}
+	
+	public function buscar_loja()
+	{
+		$this->template->load('templates/buscarloja', 'homebuscar/buscar_loja');
+	}
 }

@@ -1,1 +1,1 @@
-página principal do painel
+<a href='<?php echo base_url('index.php/painel/buscar_loja'); ?>'> página principal do painel </a>
