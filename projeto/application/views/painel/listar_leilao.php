@@ -25,7 +25,7 @@
 							<tr>
 								<th> <center> Serial        </center> </th>
 								<th> <center> Produto       </center> </th>
-								<th> <center> Preço inicial </center> </th>
+								<th> <center> Lance Mínimo  </center> </th>
 								<th> <center> Data Inicial  </center> </th>
 								<th> <center> Data Final    </center> </th>
 							</tr>
@@ -35,7 +35,7 @@
 								<tr>								   
 									<td> <?php echo '<center>'.$row->serial.'</center>'; ?>     </td>
 									<td> <?php echo '<center>'.$row->produto.'</center>'; ?>     </td>
-									<td> <?php echo '<center>'.$row->precoinicial.'</center>'; ?>  </td>
+									<td> <?php echo '<center> R$ '.$row->precoinicial.'</center>'; ?>  </td>
 									<td> <?php echo '<center>'.$row->datainicial.'</center>'; ?> </td>
 									<td> <?php echo '<center>'.$row->datafinal.'</center>'; ?>   </td>
 								</tr>

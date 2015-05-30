@@ -6,16 +6,16 @@
     <title>ShowShop | Buscar Loja</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
-    <link href="<?php echo base_url('assets/homebuscar/css/bootstrap.min.css');?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('assets/painel/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="<?php echo base_url('assets/homebuscar/css/AdminLTE.min.css');?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('assets/painel/dist/css/AdminLTE.min.css');?>" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link href="<?php echo base_url('assets/homebuscar/css/skins/_all-skins.min.css');?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('assets/painel/dist/css/skins/_all-skins.min.css');?>" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,16 +85,16 @@
 	</div><!-- ./wrapper -->
 	
     <!-- jQuery 2.1.3 -->
-    <script src="<?php echo base_url('assets/homebuscar/plugins/jQuery/jQuery-2.1.3.min.js');?>"></script>
+    <script src="<?php echo base_url('assets/painel/plugins/jQuery/jQuery-2.1.3.min.js');?>"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="<?php echo base_url('assets/homebuscar/js/bootstrap.min.js');?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/painel/bootstrap/js/bootstrap.min.js');?>" type="text/javascript"></script>
     <!-- SlimScroll -->
-    <script src="<?php echo base_url('assets/homebuscar/plugins/plugins/slimScroll/jquery.slimScroll.min.js');?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/painel/plugins/slimScroll/jquery.slimScroll.min.js');?>" type="text/javascript"></script>
     <!-- FastClick -->
-    <script src="<?php echo base_url('assets/homebuscar/plugins/fastclick/fastclick.min.js');?>"></script>
+    <script src="<?php echo base_url('assets/painel/plugins/fastclick/fastclick.min.js');?>"></script>
     <!-- AdminLTE App -->
-    <script src="<?php echo base_url('assets/homebuscar/js2/app.min.js');?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/painel/dist/js/app.min.js');?>" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="<?php echo base_url('assets/homebuscar/js2/demo.js');?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/painel/dist/js/demo.js');?>" type="text/javascript"></script>
   </body>
 </html>
