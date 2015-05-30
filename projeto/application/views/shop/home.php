@@ -13,7 +13,6 @@
 		</div>
 	</div>
 </div>
-
 <div id="conteudo-banners">
 	<div id="banner1">
 		<div style="padding:10px">

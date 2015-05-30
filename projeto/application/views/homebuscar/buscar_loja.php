@@ -8,7 +8,13 @@
               <small></small>
             </h1>
             <ol class="breadcrumb">
-              <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+              <li>
+				<a href="<?php echo base_url('index.php');?>">
+					<i class="fa fa-dashboard">
+						Home
+					</i>
+				</a>
+			  </li>
               <li class="active">Busca de Lojas</li>
             </ol>
           </section>

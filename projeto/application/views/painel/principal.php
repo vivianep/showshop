@@ -1,1 +1,3 @@
-<a href='<?php echo base_url('index.php/painel/buscar_loja'); ?>'> página principal do painel </a>
+<a href='<?php echo base_url("index.php/loja/buscar_loja"); ?>'>
+	Página para buscar loja
+</a>

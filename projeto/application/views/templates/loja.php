@@ -6,10 +6,10 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/shop/css/bootstrap.min.css') ?>"/>
 		<link rel="stylesheet" href="<?php echo base_url('assets/shop/css/loja.css') ?>"/>
 	</head>
-	<body>
+	<body>	
 		<div class="row" id="topo1">
 			<div class="col-md-9"></div>
-			<div class="col-md-3">
+			<div class="col-md-3">				
 				<a href="#">MINHA CONTA</a> | 
 				<a href="#" data-toggle="modal" data-target="#modal-login">LOGIN</a>
 			</div>
@@ -18,9 +18,10 @@
 			<div class="col-md-4" id="div-logo">
 				<h2 class="logo">Show<strong>Shop</strong></h2> <?php if(isset($loja)) echo '<h3>'.$loja->nome.'</h3>'; ?>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6">				
+			
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2">			
 				<a href="#">
 					<img src="<?php echo base_url('assets/shop/img/shopping-bag.png') ?>" alt="Suas compras" id="icone-carrinho" title="Suas compras">
 				</a>

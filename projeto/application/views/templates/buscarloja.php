@@ -56,11 +56,13 @@
                 </ul>
               </li>
             </ul>
-            <form class="navbar-form navbar-left" role="search">
+			
+            <form action="<?php echo base_url('index.php/loja/buscar'); ?>" class="navbar-form navbar-left" role="search">
               <div class="form-group">
-                <input type="text" class="form-control" id="navbar-search-input" placeholder="Busca Outra loja">
+                <input type="text" name="termo" class="form-control" id="navbar-search-input" placeholder="Buscar Outra loja"/>
               </div>
             </form>
+			
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Link</a></li>
               <li class="dropdown">
