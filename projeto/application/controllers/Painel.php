@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Painel extends CI_Controller {
+	
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('Loja_Model', 'Loja_Model');
+	}
+	
 	public function index()
 	{
 		$this->template->load('templates/painel', 'painel/principal');
@@ -24,8 +30,9 @@ class Painel extends CI_Controller {
 		$this->template->load('templates/painel', 'painel/remove_product');
 	}
 	
-	public function buscar_loja()
-	{
-		$this->template->load('templates/buscarloja', 'homebuscar/buscar_loja');
+	public function buscar_loja() {
+		$query=$this->Loja_Model->get();
+		$data['query']=$query;
+		$this->template->load('templates/buscarloja', 'homebuscar/buscar_loja', $data);
 	}
 }
