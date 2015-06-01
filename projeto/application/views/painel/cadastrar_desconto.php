@@ -26,11 +26,11 @@
                     </div>                    
                     <div class="form-group">
                       <label for="exampleInputEmail1">Data Inicial*</label>
-                      <input type="DateTime-Local" class="form-control" name="datainicial" placeholder="Data Inicial">
+                      <input type="date" class="form-control" name="datainicial" placeholder="Data Inicial">
                     </div>              
                     <div class="form-group">
                       <label for="exampleInputEmail1">Data Final*</label>
-                      <input type="DateTime-Local" class="form-control" name="datafinal" placeholder="Data Final">
+                      <input type="date" class="form-control" name="datafinal" placeholder="Data Final">
                     </div>
                                       
 

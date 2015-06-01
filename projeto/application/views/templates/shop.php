@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/shop/css/home.css') ?>"/>
 	</head>
 	<body>
-	
 		<div class="row" id="topo1">
 			<div class="col-md-9"></div>
 			<div class="col-md-3">
@@ -17,20 +16,13 @@
 		</div>
 		<div class="row" id="topo2">
 			<div class="col-md-2" id="div-logo">
-				<h2 class="logo">Show<strong>Shop</strong>
-				
-				</h2>
-								
+				<h2 class="logo">Show<strong>Shop</strong></h2></h2>
 			</div>
 			<div class="col-md-8">
-				</br></br>
-				<form action="<?php echo base_url('index.php/loja/buscar'); ?>">
-					<input type="text" name="termo" class="form-control"  placeholder="Buscar loja" style="width: 220px;"/>					
-				</form>
 			</div>
 			<div class="col-md-2">
 				<a href="#">
-					<img src="<?php echo base_url('assets/shop/img/shopping-bag.png'); ?>" alt="Suas compras" id="icone-carrinho" title="Suas compras">
+					<img src="<?php echo base_url('assets/shop/img/shopping-bag.png') ?>" alt="Suas compras" id="icone-carrinho" title="Suas compras">
 				</a>
 			</div>
 		</div>

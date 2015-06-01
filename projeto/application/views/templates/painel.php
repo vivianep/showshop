@@ -8,9 +8,9 @@
     <!-- Bootstrap 3.3.2 -->
     <link href="<?php echo base_url('assets/painel/bootstrap/css/bootstrap.css')?>" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('assets/painel/dist/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('assets/painel/dist/css/ionicons.min.css')?>" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="<?php echo base_url('assets/painel/dist/css/AdminLTE.css')?>" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
@@ -30,9 +30,7 @@
     <link href="<?php echo base_url('assets/painel/plugins/daterangepicker/daterangepicker-bs3.css')?>" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="<?php echo base_url('assets/painel/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')?>" rel="stylesheet" type="text/css" />
-    <script src="<?php echo base_url('assets/painel/plugins/jQuery/jQuery-2.1.3.min.js')?>"></script>
-    <script src="dist/js/new_function.js"></script>
-    
+    <script src="<?php echo base_url('assets/painel/plugins/jQuery/jQuery-2.1.3.min.js')?>"></script>    
     <script src="<?php echo base_url('assets/painel/bootstrap/js/bootstrap.min.js')?>"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -131,35 +129,34 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">NAVEGAÇÃO</li>
-            <li>
-              <a href="<?php echo base_url('index.php/produto/listar_produtos')?>">
-                <i class="fa fa-th"></i> <span>Produtos</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url('index.php/produto/cadastrar_produto')?>"><i class="fa fa-circle-o"></i> Criação</a></li>
-                <li><a href="<?php echo base_url('index.php/produto/editar_produto')?>"><i class="fa fa-circle-o"></i> Edição</a></li>
-                <li><a href="<?php echo base_url('index.php/produto/remover_produto')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
-              </ul>
-            </li>
-			<li>
-              <a href="<?php echo base_url('index.php/produto/listar_desconto')?>">
-                <i class="fa fa-th"></i> <span>Descontos</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url('index.php/desconto/listar_desconto')?>"><i class="fa fa-circle-o"></i> Listar</a></li>
-                <li><a href="<?php echo base_url('index.php/desconto/cadastrar_desconto')?>"><i class="fa fa-circle-o"></i> Criar</a></li>
-                <li><a href="<?php echo base_url('index.php/desconto/remover_desconto')?>"><i class="fa fa-circle-o"></i> Excluir</a></li>
-              </ul>
-            </li> 	
-			<li>
-              <a href="<?php echo base_url('index.php/produto/listar_leilao')?>">
-                <i class="fa fa-th"></i> <span>Leilões</span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url('index.php/leilao/listar_leilao')?>"><i class="fa fa-circle-o"></i> Listar</a></li>
-                <li><a href="<?php echo base_url('index.php/leilao/cadastrar_leilao')?>"><i class="fa fa-circle-o"></i> Criar</a></li>
-                <li><a href="<?php echo base_url('index.php/leilao/remover_leilao')?>"><i class="fa fa-circle-o"></i> Excluir</a></li>
-              </ul>
+              <li>
+                <a href="#">
+                  <i class="fa fa-th"></i> <span>Configurações</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="<?php echo base_url('index.php/loja/configuracoes')?>"><i class="fa fa-circle-o"></i>Dados da loja</a></li>
+                  <li><a href="<?php echo base_url('index.php/loja/usuarios')?>"><i class="fa fa-users"></i>Usuários</a></li>
+                  <li><a href="<?php echo base_url('index.php/loja/configurar_vitrine')?>"><i class="fa fa-circle-o"></i>Vitrine</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="<?php echo base_url('index.php/produto/listar_produtos')?>">
+                  <i class="fa fa-th"></i> <span>Produtos</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="<?php echo base_url('index.php/produto/cadastrar_produto')?>"><i class="fa fa-barcode"></i> Criação</a></li>
+                  <li><a href="<?php echo base_url('index.php/produto/editar_produto')?>"><i class="fa fa-barcode"></i> Edição</a></li>
+                  <li><a href="<?php echo base_url('index.php/produto/remover_produto')?>"><i class="fa fa-barcode"></i> Exclusão</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="<?php echo base_url('index.php/produto/listar_desconto')?>">
+                  <i class="fa fa-th"></i> <span>Descontos</span>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="<?php echo base_url('index.php/desconto/cadastrar_desconto')?>"><i class="fa fa-circle-o"></i> Criação</a></li>
+                  <li><a href="<?php echo base_url('index.php/desconto/remover_desconto')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
+                </ul>
             </li> 			
           </ul>
         </section>
@@ -177,7 +174,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        <strong>ShowShop - 2015.</strong>
       </footer>
     </div><!-- ./wrapper -->
 

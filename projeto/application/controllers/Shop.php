@@ -5,8 +5,7 @@ class Shop extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Loja_Model', 'Loja_Model');
-		$this->load->model('MasterId_Model', 'MasterId_Model');
-		$this->load->model('LoginLoja_Model', 'LoginLoja_Model');
+		$this->load->model('Login_Model', 'Login_Model');
 	}
 	
 	public function index()
@@ -34,12 +33,12 @@ class Shop extends CI_Controller {
 	
 	public function cadastrar_loja()
 	{
-		$nome = $this->input->post('nome');
-		$tipo = $this->input->post('tipo');
+		$nome        = $this->input->post('nome');
+		$tipo        = $this->input->post('tipo');
 		$nomeusuario = $this->input->post('nomeusuario');
-		$usuario = $this->input->post('usuario');
-		$senha = $this->input->post('senha');
-		$email = $this->input->post('email');
+		$usuario     = $this->input->post('usuario');
+		$senha       = $this->input->post('senha');
+		$email       = $this->input->post('email');
 		
 		$dados = array(
 			'nome' => $nome,
@@ -47,28 +46,26 @@ class Shop extends CI_Controller {
 		);
 		
 		$codloja = $this->Loja_Model->post($dados);
-		$masterid = $this->MasterId_Model->post();
 		
 //		$dados['cod'] = $cod;
 //		$dados['logo'] = 'imagens/logos/'.$cod.'.jpg';
 //		$moveu = move_uploaded_file($_FILES['logo']['tmp_name'], $dados['logo']);		
 //		$this->Loja_Model->update($dados);
 		
-		
-		$this->session->set_userdata('codloja', $cod);
-		$this->session->set_userdata('masterid', $masterid);
-		$this->session->set_userdata('nomeusuario', $nomeusuario);
-		
 		$dadosusuario = array(
-			'usuario' => $usuario,
-			'nome' => $nomeusuario,
-			'senha' => $senha,
-			'email' => $email,
-			'codloja' => $codloja,
-			'mastercode' => $masterid	
+			'usuario'    => $usuario,
+			'nome'       => $nomeusuario,
+			'senha'      => $senha,
+			'email'      => $email,
+			'codloja'    => $codloja,
+			'nivelacesso'=> 2	
 		);
 		
-		$result = $this->LoginLoja_Model->post($dadosusuario);
+		$result = $this->Login_Model->post($dadosusuario);
+		
+		$this->session->set_userdata('codloja', $codloja);
+		$this->session->set_userdata('usuario', $usuario);
+		$this->session->set_userdata('nivelacesso', 2);
 		
 		redirect('painel');
 	}

@@ -2,22 +2,12 @@
 
 class Loja_Model extends CI_Model {
 	
-	/*public function get($condicao = array()){
+	public function get($condicao = array()){
 		$this->db->select('cod, nome, tipo, logo');
 		$this->db->where($condicao);
 		$this->db->order_by('nome');
 		$this->db->from('loja');
 		return $this->db->get()->result();
-	}*/
-	
-	public function get(){	
-		$query=$this->db->get('loja');
-		return $query;
-	}
-	
-	public function getBusca($termo){
-		$query = $this->db->query('select * from loja where nome LIKE \'%'.$termo.'%\'');// or descricao LIKE \'%'.$termo.'%\'');	
-		return $query;
 	}
 	
 	public function get_categorias($codloja){
