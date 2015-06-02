@@ -1,3 +1,3 @@
-página principal do painel
-
-<?php echo $this->session->userdata('codloja'); ?>
+<a href='<?php echo base_url("index.php/loja/buscar_loja"); ?>'>
+	Página para buscar loja
+</a>

@@ -37,14 +37,14 @@ class Produto extends CI_Controller {
 
 	public function salvar_dados(){
 		$codloja      = $this->input->post('codloja');
-		$serial  = $this->input->post('serial');
-		$nome   = $this->input->post('nome');
-		$descr      = $this->input->post('descr');
-		$preco      = $this->input->post('preco');
-		$quantidade  = $this->input->post('quantidade');
-		$tipo   = $this->input->post('tipo');
-		$marca      = $this->input->post('marca');
-		$tam      = $this->input->post('tam');
+		$serial       = $this->input->post('serial');
+		$nome         = $this->input->post('nome');
+		$descr        = $this->input->post('descr');
+		$preco        = $this->input->post('preco');
+		$quantidade   = $this->input->post('quantidade');
+		$tipo         = $this->input->post('tipo');
+		$marca        = $this->input->post('marca');
+		$tam          = $this->input->post('tam');
 		
 		$dados = array(
 			'codloja' => $codloja,
