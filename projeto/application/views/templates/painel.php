@@ -64,7 +64,15 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<?php echo base_url('assets/painel/dist/img/user2-160x160.jpg')?>" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Alexander Pierce</span>
+                 <!-- <span class="hidden-xs">  </span> -->
+                      <?php 
+                        if (isset($_SESSION['usuario'])) {
+                          $sair = base_url('index.php/shop/log_out');
+                          echo "<a href='$sair'>SAIR</a>";
+                        }else{
+                          echo "LOGIN";
+                        }
+                      ?>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -113,6 +121,13 @@
           <div class="user-panel">
             <div class="pull-left image">
               <img src="<?php echo base_url('assets/painel/dist/img/user2-160x160.jpg')?>" class="img-circle" alt="User Image" />
+              
+              <?php  
+                  if (isset($_SESSION['usuario'])) {
+                      echo'<span style="color: #fff">'.$_SESSION['usuario'].'<span>';
+                  }
+              ?>
+
             </div>
             <div class="pull-left info">
               <p><?php echo $this->session->userdata('nomeusuario'); ?></p>

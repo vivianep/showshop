@@ -7,12 +7,22 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/shop/css/home.css') ?>"/>
 	</head>
 	<body>
-	
+		
 		<div class="row" id="topo1">
 			<div class="col-md-9"></div>
 			<div class="col-md-3">
-				<a href="#">MINHA CONTA</a> | 
-				<a href="#" data-toggle="modal" data-target="#modal-login">LOGIN</a>
+				<a href="#">
+				<?php 
+					if (isset($_SESSION['usuario'])) {
+						echo $_SESSION['usuario'];
+						$usuario = $_SESSION['usuario'];
+						$sair = base_url('index.php/shop/log_out');
+						echo "</a> | <a href='$sair'>SAIR</a>";
+					}else{
+						echo "MINHA CONTA </a> |"; 
+						echo '<a href="#" data-toggle="modal" data-target="#modal-login">LOGIN</a>';
+					}
+				?>
 			</div>
 		</div>
 		<div class="row" id="topo2">
@@ -59,7 +69,7 @@
 						<h4 class="modal-title">Acesse sua conta</h4>
 					</div>
 					<div class="modal-body">
-						<form action="post">
+						<form action="<?php echo base_url('index.php/usuario/autenticar_usuario')?>" method="post">
 							<div class="form-group">
 								<label for="loginemail">Email</label>
 								<input type="email" name="loginemail" placeholder="Informe seu email" class="form-control"/>
@@ -71,12 +81,13 @@
 							<div class="form-group">
 								<p>Ainda não é cadastrado? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-cadastro">Cadastre-se agora.</a></p>
 							</div>
-						</form>
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary">Acessar</button>
+						<button type="submit" class="btn btn-primary">Acessar</button>
 					</div>
+					</form>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
@@ -91,7 +102,7 @@
 						<h4 class="modal-title">Cadastre-se no <strong>ShowShop</strong></h4></h4>
 					</div>
 					<div class="modal-body">
-						<form action="post">
+						<form action="<?php echo base_url('index.php/usuario/cadastrar_usuario_showshop')?>"" method='post'>
 							<div class="form-group">
 								<label for="cadastroemail">Email</label>
 								<input type="email" name="cadastroemail" placeholder="Digite aqui seu email de acesso" class="form-control"/>
@@ -107,12 +118,13 @@
 							<div class="form-group">
 								<p>Já tem cadastro? Então efetue <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-login">login.</a></p>
 							</div>
-						</form>
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-						<button type="button" class="btn btn-primary">Cadastrar</button>
+						<button type="submit" class="btn btn-primary">Cadastrar</button>
 					</div>
+					</form>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->

@@ -2,7 +2,7 @@
 
 class Login_Model extends CI_Model {
 	
-	public function get($condicao = array()){
+	public function get($condicao){
 		$this->db->select('usuario, codloja, senha, nome, email, nivelacesso');
 		$this->db->where($condicao);
 		$this->db->from('login');

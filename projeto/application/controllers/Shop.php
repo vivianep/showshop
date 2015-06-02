@@ -5,8 +5,9 @@ class Shop extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Loja_Model', 'Loja_Model');
-		$this->load->model('MasterId_Model', 'MasterId_Model');
 		$this->load->model('LoginLoja_Model', 'LoginLoja_Model');
+		$this->load->library('session');
+		$this->load->model('Login_model', 'Login_Model'); 
 	}
 	
 	public function index()
@@ -17,6 +18,12 @@ class Shop extends CI_Controller {
 		$this->template->load('templates/shop', 'shop/home', $dados);
 	}
 	
+	public function log_out()
+	{
+		$this->session->unset_userdata('usuario');
+		redirect("shop");
+	}
+
 	public function loja($cod)
 	{
 		$loja = $this->Loja_Model->get(array('cod'=>$cod));
@@ -40,35 +47,36 @@ class Shop extends CI_Controller {
 		$usuario = $this->input->post('usuario');
 		$senha = $this->input->post('senha');
 		$email = $this->input->post('email');
-		
-		$dados = array(
+		$nivelacesso = 2;
+
+		$dt = new DateTime();
+		$dadosLoja = array(
 			'nome' => $nome,
-			'tipo' => $tipo
+			'tipo' => $tipo,
+			'email' => $email,
+			'registradoEm' => $dt->format('Y-m-d H:i:s'),
 		);
-		
-		$codloja = $this->Loja_Model->post($dados);
-		$masterid = $this->MasterId_Model->post();
+
+		$codloja = $this->Loja_Model->post($dadosLoja);
 		
 //		$dados['cod'] = $cod;
 //		$dados['logo'] = 'imagens/logos/'.$cod.'.jpg';
 //		$moveu = move_uploaded_file($_FILES['logo']['tmp_name'], $dados['logo']);		
 //		$this->Loja_Model->update($dados);
-		
-		
-		$this->session->set_userdata('codloja', $cod);
-		$this->session->set_userdata('masterid', $masterid);
-		$this->session->set_userdata('nomeusuario', $nomeusuario);
-		
+	
+		$this->session->set_userdata('codloja', $codloja);
+		$this->session->set_userdata('usuario', $nomeusuario);
+	
 		$dadosusuario = array(
 			'usuario' => $usuario,
 			'nome' => $nomeusuario,
 			'senha' => $senha,
 			'email' => $email,
 			'codloja' => $codloja,
-			'mastercode' => $masterid	
+			'nivelacesso' => $nivelacesso,
 		);
 		
-		$result = $this->LoginLoja_Model->post($dadosusuario);
+		$result = $this->Login_Model->post($dadosusuario);
 		
 		redirect('painel');
 	}

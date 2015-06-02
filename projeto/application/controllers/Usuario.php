@@ -5,8 +5,8 @@ class Usuario extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->layout= "";
-		$this->load->model('MasterId_model', 'MasterId_Model');
-		$this->load->model('Loginss_model', 'Loginss_Model'); 
+		$this->load->library('session');
+		$this->load->model('Login_model', 'Login_Model'); 
 	}
 
 	public function autenticar_usuario(){
@@ -16,20 +16,22 @@ class Usuario extends CI_Controller {
 		$dados = array(
 			'email' => $email,
 		);
-		$usuario = $this->Loginss_Model->get($dados);
+
+		$usuario = $this->Login_Model->get($dados)[0];
 
 		if ($usuario) {
 			if($usuario->senha == $senha){
 				$this->session->set_flashdata('flashSuccess', 'Usuario autenticado com sucesso');
-				$this->session->set_userdata('mastercode', $retorno->mastercode);
+				$this->session->set_userdata('codloja', $usuario->codloja);
+				$this->session->set_userdata('usuario', $usuario->email);
+				$this->session->set_userdata('nivelacesso', $usuario->nivelacesso);
 				$msg = $this->session->userdata('flashSuccess');
-				echo "<script type='text/javascript'>alert('$msg');</script>";
-				
-				if ($usuario->nivelacesso == 1) {
-					redirect('shop');
-				}else{
+
+				if ($usuario->nivelacesso == 2) {
 					redirect('painel');
 				}
+				echo "<script type='text/javascript'>alert('$msg');</script>";
+
 			}else{
 				$this->session->set_flashdata('flashError','Falha na autenticação, senha incorreta');
 				$msg = $this->session->userdata('flashError');
@@ -40,13 +42,13 @@ class Usuario extends CI_Controller {
 			$msg = $this->session->userdata('flashError');
 			echo "<script type='text/javascript'>alert('$msg');</script>";
 		}
+		redirect('shop', 'refresh');
 	}
 
 	public function cadastrar_usuario_showshop(){		
 		$email       = $this->input->post('cadastroemail');
 		$senha       = $this->input->post('cadastrosenha');
 		$repetesenha = $this->input->post('cadastroconfirmasenha');
-		$masterId    = $this->MasterId_Model->post();
 		$nivelacesso = 1;
 		$usuario = $email;
 		
@@ -54,29 +56,37 @@ class Usuario extends CI_Controller {
 			'usuario' => $usuario,
 			'email' => $email,
 			'senha' => $senha,
-			'mastercode' => $masterId,
 			'nivelacesso' => $nivelacesso,
 		);
 
-		$verifica = $this->Loginss_Model->get(array('email' => $email,));
+		$verifica = $this->Login_Model->get(array('email' => $email));
 		
 		if (!$verifica) {
 			if ($senha == $repetesenha) {
-				$retorno = $this->Loginss_Model->post($dados);	
+				$retorno = $this->Login_Model->post($dados);	
 				if($retorno){
 					$this->session->set_flashdata('flashSuccess', 'Usuario cadastrado com sucesso.');
-					$this->session->set_userdata('mastercode', $masterId);
+					$this->session->set_userdata('usuario', $retorno->usuario);
+					$this->session->set_userdata('nivelacesso', $retorno->nivelacesso);
+					$msg = $this->session->userdata('flashSuccess');
+					echo "<script type='text/javascript'>alert('$msg');</script>";
 				} else {
 					$this->session->set_flashdata('flashError','Ocorreu um erro ao gravar os dados.');
+					$msg = $this->session->userdata('flashError');
+					echo "<script type='text/javascript'>alert('$msg');</script>";
 				}
 			}else{
 				$this->session->set_flashdata('flashError','Senhas diferenetes');
+				$msg = $this->session->userdata('flashError');
+				echo "<script type='text/javascript'>alert('$msg');</script>";
 			}
 		}else{
 			$this->session->set_flashdata('flashError','Este email já está cadastrado, tente outro');
 			$msg = $this->session->userdata('flashError');
 			echo "<script type='text/javascript'>alert('$msg');</script>";
 		}
+
+		$this->template->load('templates/shop', 'shop/home');
 	}
 
 	public function remover_conta(){
@@ -88,11 +98,11 @@ class Usuario extends CI_Controller {
 			'email' => $email,
 		);
 		
-		$usuario = $this->Loginss_Model->get($dados);
+		$usuario = $this->Login_Model->get($dados);
 
 		if ($usuario) {
 			if($usuario->senha == $senhaCrypt){
-				$this->Loginss_Model->delete($dados);
+				$this->Login_Model->delete($dados);
 				$this->session->set_flashdata('flashError', 'Usuario excluido do sistema');
 			} else {
 				$this->session->set_flashdata('flashError', 'A senha esta incorreta');
@@ -100,7 +110,6 @@ class Usuario extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('flashError', 'Email inexistente');			
 		}
-
 	}
 
 	/* To Do
