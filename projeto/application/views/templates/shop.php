@@ -34,9 +34,21 @@
 			</div>
 			<div class="col-md-8">
 				</br></br>
-				<form action="<?php echo base_url('index.php/loja/buscar'); ?>">
-					<input type="text" name="termo" class="form-control"  placeholder="Buscar loja" style="width: 220px;"/>					
-				</form>
+				<table border='0'>
+					<tr>
+						<td>
+							<form action="<?php echo base_url('index.php/loja/buscar'); ?>">
+								<input type="text" name="termo" class="form-control"  placeholder="Buscar Loja" style="width: 220px;"/>					
+							</form>
+						</td>
+						
+						<td>
+							<form action="<?php echo base_url('index.php/produto/buscar'); ?>">
+								<input type="text" name="termo" class="form-control"  placeholder="Buscar Produto" style="width: 220px;"/>					
+							</form>
+						</td>
+					</tr>
+				</table>
 			</div>
 			<div class="col-md-2">
 				<a href="#">

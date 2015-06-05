@@ -8,6 +8,12 @@ class Produto_Model extends CI_Model {
 		$this->db->from('produto');
 		return $this->db->get()->result();
 	}
+	
+	public function getBusca($termo){
+		$query = $this->db->query('select * from produto where nome LIKE \'%'.$termo.'%\'');// or descricao LIKE \'%'.$termo.'%\'');	
+		return $query;
+	}
+	
 	public function get_produtos(){
 		
 		$query=$this->db->get('produto');

@@ -72,6 +72,12 @@ class Produto extends CI_Controller {
 		}
 		redirect("produto/remover_produto");
 	}
+	
+	public function buscar() {
+		$query=$this->Produto_Model->getBusca($this->input->get('termo'));
+		$data['query']=$query;
+		$this->template->load('templates/buscarproduto', 'homebuscar/buscar_produto', $data);
+	}
 }
 
 ?>
