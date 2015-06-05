@@ -148,6 +148,15 @@
             <li class="header">NAVEGAÇÃO</li>
             <li>
               <a href="<?php echo base_url('index.php/produto/listar_produtos')?>">
+                <i class="fa fa-th"></i> <span>Configurações</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?php echo base_url('index.php/loja/configuracoes')?>"><i class="fa fa-circle-o"></i> Dados da loja</a></li>
+                <li><a href="<?php echo base_url('index.php/loja/usuarios')?>"><i class="fa fa-circle-o"></i> Usuários</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="<?php echo base_url('index.php/produto/listar_produtos')?>">
                 <i class="fa fa-th"></i> <span>Produtos</span>
               </a>
               <ul class="treeview-menu">

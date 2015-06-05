@@ -6,6 +6,7 @@ class Loja extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Loja_Model', 'Loja_Model');
+		$this->load->model('Login_Model', 'Login_Model');
 	}
 	
 	public function buscar_loja() {
