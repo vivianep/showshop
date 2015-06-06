@@ -14,8 +14,7 @@ class Produto_Model extends CI_Model {
 		return $query;
 	}
 	
-	public function get_produtos(){
-		
+	public function get_produtos(){	
 		$query=$this->db->get('produto');
 		return $query ;
 	}

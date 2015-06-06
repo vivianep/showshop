@@ -6,8 +6,9 @@ class Shop extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Loja_Model', 'Loja_Model');
 		$this->load->model('LoginLoja_Model', 'LoginLoja_Model');
-		$this->load->library('session');
-		$this->load->model('Login_model', 'Login_Model'); 
+		//$this->load->library('session');
+		$this->load->model('Login_model', 'Login_Model');
+		$this->load->model('VitrineLoja_Model', 'VitrineLoja_Model'); 
 	}
 	
 	public function index()
@@ -24,13 +25,56 @@ class Shop extends CI_Controller {
 		redirect("shop");
 	}
 
-	public function loja($cod)
+	public function loja($cod, $categoria=NULL)
 	{
 		$loja = $this->Loja_Model->get(array('cod'=>$cod));
 		$categorias = $this->Loja_Model->get_categorias($cod);
+		$vitrines = $this->VitrineLoja_Model->get(array('codloja'=>$cod))[0];
+		if($vitrines){
+			$banners = array();
+			if($vitrines->vitrine1banner)
+				$banners[] = $vitrines->vitrine1banner;
+			if($vitrines->vitrine2banner)
+				$banners[] = $vitrines->vitrine2banner;
+			if($vitrines->vitrine3banner)
+				$banners[] = $vitrines->vitrine3banner;
+			if($vitrines->vitrine4banner)
+				$banners[] = $vitrines->vitrine4banner;
+		}
+		
 		$dados = array();
 		$dados['loja'] = $loja[0];
 		$dados['categorias'] = $categorias;
+		$dados['banners'] = $banners;
+		$dados['produtos'] = array();
+		
+
+		
+		if($categoria){
+			$cont = 6;
+			for($i = 0; $i < 40; $i += 6){
+				//$dados['produtos'][] = array();
+				$row = array();
+				for($j = $i; ($j < $cont) && ($j < 40); $j++){
+				 	$row[] = $j;
+				}
+				$dados['produtos'][] = $row;
+				$cont+=6;
+			}			
+		}
+		else {
+			$cont = 6;
+			for($i = 0; $i < 40; $i += 6){
+				//$dados['produtos'][] = array();
+				$row = array();
+				for($j = $i; ($j < $cont) && ($j < 40); $j++){
+				 	$row[] = $j;
+				}
+				$dados['produtos'][] = $row;
+				$cont+=6;
+			}
+		}
+
 		$this->template->load('templates/loja', 'shop/loja', $dados);		
 	}
 	

@@ -153,6 +153,7 @@
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url('index.php/loja/configuracoes')?>"><i class="fa fa-circle-o"></i> Dados da loja</a></li>
                 <li><a href="<?php echo base_url('index.php/loja/usuarios')?>"><i class="fa fa-circle-o"></i> Usuários</a></li>
+                <li><a href="<?php echo base_url('index.php/loja/vitrine')?>"><i class="fa fa-circle-o"></i> Vitrine</a></li>
               </ul>
             </li>
             <li>

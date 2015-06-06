@@ -7,6 +7,7 @@ class Loja extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Loja_Model', 'Loja_Model');
 		$this->load->model('Login_Model', 'Login_Model');
+		$this->load->model('VitrineLoja_Model', 'VitrineLoja_Model');
 	}
 	
 	public function buscar_loja() {
@@ -85,6 +86,68 @@ class Loja extends CI_Controller {
 			
 		$this->Loja_Model->update($dados);
 		redirect('loja/configuracoes');
+	}
+	
+	public function vitrine() {
+		$dados = array();
+		$dados['vitrine'] = $this->VitrineLoja_Model->get(array('codloja'=>$this->session->userdata('codloja')))[0];
+		if(!$dados['vitrine']){
+			$dados['vitrine']->vitrine1banner = 'banner_default.jpg';
+			$dados['vitrine']->vitrine2banner = 'banner_default.jpg';
+			$dados['vitrine']->vitrine3banner = 'banner_default.jpg';
+			$dados['vitrine']->vitrine4banner = 'banner_default.jpg';
+		}
+		if(!$dados->vitrine1banner)
+			$dados->vitrine1banner = 'banner_default.jpg';
+		if(!$dados->vitrine2banner)
+			$dados->vitrine2banner = 'banner_default.jpg';
+		if(!$dados->vitrine3banner)
+			$dados->vitrine3banner = 'banner_default.jpg';
+		if(!$dados->vitrine4banner)
+			$dados->vitrine4banner = 'banner_default.jpg';
+		//var_dump($dados['vitrine']);
+		$this->template->load('templates/painel', 'painel/configurar_vitrine', $dados);
+	}
+	
+	public function salvar_vitrine(){
+		var_dump($_FILES);
+		
+		$codloja = $this->session->userdata('codloja');
+		
+		if($_FILES['banner1']['name']){
+			$path = 'banner'.$codloja.'1.jpg';
+			move_uploaded_file($_FILES['banner1']['tmp_name'], 'imagens/banners/'.$path);
+			$dados['vitrine1banner'] = $path;
+		}
+		
+		if($_FILES['banner2']['name']){
+			$path = 'banner'.$codloja.'2.jpg';
+			move_uploaded_file($_FILES['banner2']['tmp_name'], 'imagens/banners/'.$path);
+			$dados['vitrine2banner'] = $path;
+		}
+		
+		if($_FILES['banner3']['name']){
+			$path = 'banner'.$codloja.'3.jpg';
+			move_uploaded_file($_FILES['banner3']['tmp_name'], 'imagens/banners/'.$path);
+			$dados['vitrine3banner'] = $path;
+		}
+		
+		if($_FILES['banner4']['name']){
+			$path = 'banner'.$codloja.'4.jpg';
+			move_uploaded_file($_FILES['banner4']['tmp_name'], 'imagens/banners/'.$path);
+			$dados['vitrine4banner'] = $path;
+		}
+		
+		if($dados){
+			 $dados['codloja'] = $codloja;
+			 $atual = $this->VitrineLoja_Model->get(array('codloja'=>$codloja))[0];
+			
+			  if($atual)
+			    	$this->VitrineLoja_Model->update($dados);
+			 else
+			 		$this->VitrineLoja_Model->post($dados);
+			redirect('loja/vitrine');
+		}
 	}
 }	
 ?>

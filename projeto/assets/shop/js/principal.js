@@ -13,5 +13,18 @@ $(function() {
 		function () {
 			
 		}
-	);	
+	);
+	
+	$(".item-produto").hover(
+		function () {
+			$(this).find(".botoes-produto").show();
+		},
+		function () {
+			$(this).find(".botoes-produto").hide();
+		}	
+	);
+	
+	$(".btn-detalhes-produto").click(function(){
+		$("#modal-detalhes-produto").modal();
+	});
 });

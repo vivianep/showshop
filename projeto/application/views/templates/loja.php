@@ -30,6 +30,7 @@
 		<div id="corpo">
 			<?php echo $contents ?>
 		</div>
+		
 		<div class="row" id="rodape1">
 			<div class="col-md-3">
 				<ul class="lista-rodape">
@@ -39,8 +40,8 @@
 				</ul>
 			</div>
 		</div>
-		<div class="row" id="rodape2">
-			
+		
+		<div class="row" id="rodape2">			
 		</div>
 		
 		<!-- MODAL LOGIN -->
