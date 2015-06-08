@@ -8,6 +8,12 @@ class Produto_Model extends CI_Model {
 		$this->db->from('produto');
 		return $this->db->get()->result();
 	}
+
+	public function get_byCod($cod){
+		
+		$query = $this->db->get_where('produto', array('cod' => $cod));
+		return $query;
+	}
 	
 	public function getBusca($termo){
 		$query = $this->db->query('select * from produto where nome LIKE \'%'.$termo.'%\'');// or descricao LIKE \'%'.$termo.'%\'');	
@@ -21,13 +27,21 @@ class Produto_Model extends CI_Model {
 
 	public function post($itens){
 		$res = $this->db->insert('produto', $itens);
-		return $res;
+		return $this->db->insert_id();	
 	}
 
 	public function update($itens){
 		$this->db->where('cod', $itens['cod']);
 	    $this->db->update('produto', $itens);
 	    return $itens['id'];
+	}
+
+	public function update_img($cod,$path){
+	 
+	    $data = array('img' => $path);
+		$this->db->where('cod', $cod);
+	    $this->db->update('produto', $data);
+
 	}
 	
 	public function delete($condicao = array()) {

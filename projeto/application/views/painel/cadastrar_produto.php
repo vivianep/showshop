@@ -9,7 +9,7 @@
                   <h3 class="box-title">Adicionar produto</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form"  accept-charset="utf-8" action="http://localhost/showshop/projeto/index.php/produto/salvar_dados" method="POST">
+                <form role="form"  accept-charset="utf-8" action="<?php echo base_url('index.php/Produto/salvar_dados')?>" method="POST" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
                       <input type="hidden" name="codloja" value="1">
@@ -63,6 +63,13 @@
                       <label for="exampleInputEmail1">Descrição do Produto*</label>
                       <textarea type="text" class="form-control" name="descr" placeholder="Descrição"> </textarea>
                       
+                    </div>
+
+                    <div class="form-group" >
+                      
+                      <label for="exampleInputEmail1">Imagem do Produto</label>
+                      <input type="file" name="img-produto"/>
+                                   
                     </div>
                     
                     

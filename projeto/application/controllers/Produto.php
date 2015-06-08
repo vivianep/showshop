@@ -5,7 +5,9 @@ class Produto extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('Login_Model', 'Login_Model');
 		$this->load->model('Produto_Model', 'Produto_Model');
+		$this->load->model('Loja_Model', 'Loja_Model');
 	}
 
 	public function index() {
@@ -14,18 +16,35 @@ class Produto extends CI_Controller {
 		$this->template->load('templates/painel', 'painel/listar_produtos',$data);
 	}
 
+	public function atualizar_produto() {
+		
+		$query=$this->Produto_Model->get_produtos();
+		$data['query']=$query;
+		$this->template->load('templates/painel', 'painel/atualizar_produto', $data);
+	
+	}
+
 	public function editar_produto() {
 		$this->template->load('templates/painel', 'painel/editar_produto');
 	}
 
-	public function modal_editar_produto($cod_prod) {
-		$dados = array();
-		$this->parser->parse('painel/modal_edit', $dados);
-		//$this->template->load('templates/painel', 'painel/modal_edit');
+	
+
+	public function modal_editar($cod) {
+		var_dump($cod);
+		$query=$this->Produto_Model->get_byCod($cod[0]);
+		$data['query']=$query;
+		$this->load->view('painel/modal_editar',$data);
+		
+		
 	}
 
 	public function cadastrar_produto() {
-		$this->template->load('templates/painel', 'painel/cadastrar_produto');
+		$codloja = $this->session->userdata('codloja');
+		$dados = array();
+		$dados['loja'] = $this->Loja_Model->get(array('cod'=>$codloja))[0];
+		$this->template->load('templates/painel', 'painel/cadastrar_produto',$dados);
+
 
 	}
 
@@ -59,9 +78,38 @@ class Produto extends CI_Controller {
 				
 		);	
 
-		$retorno = $this->Produto_Model->post($dados);
 		
-		redirect("produto/index");
+
+		$cod = $this->Produto_Model->post($dados);
+
+		
+		
+
+		
+			$img_produto    = $cod.'.jpg';
+			move_uploaded_file($_FILES['img-produto']['tmp_name'], 'imagens/produtos/'.$img_produto);
+		
+
+		$itens = array(
+			
+			'img' => $img_produto,
+			'serial' => '1111',
+			'cod'  => $cod			
+		);
+		
+		$this->Produto_Model->update($itens);
+
+		$this->index($cod);
+	}
+
+
+
+	public function select_data(){
+		 //verifica se enviou o formulário
+		$cod = $this->input->post('cod');
+		$condicoes = array('cod' => $cod);
+		$data=$this->Produto_Model->get_byCod($condicoes);
+		$this->template->load('templates/painel', 'painel/editar_produto',$data);
 	}
 
 	public function deletar_dados() {
@@ -71,6 +119,12 @@ class Produto extends CI_Controller {
 			$this->Produto_Model->delete($condicoes); //chama a função de excluir dados no BD
 		}
 		redirect("produto/remover_produto");
+	}
+
+	public function buscar_produto(){
+		$query=$this->Produto_Model->getBusca($this->input->get('nome'));
+		$data['query']=$query;
+		$this->template->load('templates/painel', 'painel/atualizar_produto', $data);
 	}
 	
 	public function buscar() {

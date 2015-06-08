@@ -6,6 +6,7 @@
                   <div class="box box-primary">
                     <div class="box-header">
                       <h3 class="box-title">Listagem dos Produtos </h3>
+                      <h1> <?php var_dump($cod) ?></h1>
                     </div><!-- /.box-header -->
                       <div class="box-body">
                         <div id="invisible-table">

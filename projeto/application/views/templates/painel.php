@@ -162,8 +162,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url('index.php/produto/cadastrar_produto')?>"><i class="fa fa-circle-o"></i> Criação</a></li>
-                <li><a href="<?php echo base_url('index.php/produto/editar_produto')?>"><i class="fa fa-circle-o"></i> Edição</a></li>
-                <li><a href="<?php echo base_url('index.php/produto/remover_produto')?>"><i class="fa fa-circle-o"></i> Exclusão</a></li>
+                <li><a href="<?php echo base_url('index.php/produto/atualizar_produto')?>"><i class="fa fa-circle-o"></i> Atualizar </a></li>
+                
               </ul>
             </li>
 			<li>
