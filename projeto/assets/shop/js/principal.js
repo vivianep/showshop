@@ -25,6 +25,13 @@ $(function() {
 	);
 	
 	$(".btn-detalhes-produto").click(function(){
+		var descr = $(this).parent().parent().find(".descricao-produto").text();
+		var preco = $(this).parent().parent().find(".preco-produto").text();
+		var img = $(this).parent().parent().find(".img-item-produto").attr("src");
+		
+		$("#modal-detalhes-produto").find(".modal-header").find(".modal-title").text(descr);
+		$("#modal-detalhes-produto").find(".modal-body").find(".modal-preco-produto").find("h3").text(preco);
+		$("#modal-detalhes-produto").find(".modal-body").find("img").attr("src", img);
 		$("#modal-detalhes-produto").modal();
 	});
 });

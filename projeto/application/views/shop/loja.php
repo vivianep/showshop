@@ -5,10 +5,10 @@
 				<ul class="nav nav-pils nav-stack">
 					<?php
 						foreach($categorias as $c){
-							echo '<li><a href="#">'.$c->tipo.'</a></li>';
+							echo '<li><a href="'.base_url('index.php/shop/loja/'.$loja->cod.'/'.$c->tipo).'">'.$c->tipo.'</a></li>';
 						}
 					?>
-					<li><a href="#">Tudo</a></li>
+					<li><a href="<?php echo base_url('index.php/shop/loja/'.$loja->cod)?>">Tudo</a></li>';
 				</ul>
 			</div>
 		</div>
@@ -53,9 +53,9 @@
 		echo '<div class="row div-produtos">';
 		foreach($row as $p){
 			echo '<div class="col-md-2 item-produto">'.
-				 '	<img src="'.base_url('imagens/produtos/produto_default.jpg').'" alt="" class="img-item-produto"/>'.
-				 '	<div class="descricao-produto">Descrição do produto</div>'.
-				 '	<div class="preco-produto">R$ 1.234,56</div>'.
+				 '	<img src="'.base_url('imagens/produtos/'.$p->img).'" alt="" class="img-item-produto"/>'.
+				 '	<div class="descricao-produto">'.$p->nome.'</div>'.
+				 '	<div class="preco-produto">R$ '.$p->preco.'</div>'.
 				 '	<div class="botoes-produto">'.
 				 '		<button class="btn btn-primary btn-sm">Comprar</button>'.
 				 '		<button class="btn btn-default btn-sm btn-detalhes-produto">Detalhes</button>'.
@@ -77,11 +77,11 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-md-12">
-						<img src="<?php echo base_url('imagens/produtos/produto_default.jpg')?>" alt="Imagem do produto">
+						<img src="<?php echo base_url('imagens/produtos/produto_default.jpg')?>" alt="Imagem do produto" class="img-responsive"/>
 					</div>
 					<div class="row">
 						<div class="col-md-6"></div>
-						<div class="col-md-6" style="font-weight:bold; text-align:center"><h3>R$ 1.234,56</h3></div>
+						<div class="col-md-6 modal-preco-produto" style="font-weight:bold; text-align:center"><h3>R$ 1.234,56</h3></div>
 					</div>
 				</div>
 			</div>

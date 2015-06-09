@@ -31,7 +31,6 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="<?php echo base_url('assets/painel/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')?>" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url('assets/painel/plugins/jQuery/jQuery-2.1.3.min.js')?>"></script>
-    <script src="dist/js/new_function.js"></script>
     
     <script src="<?php echo base_url('assets/painel/bootstrap/js/bootstrap.min.js')?>"></script>
 

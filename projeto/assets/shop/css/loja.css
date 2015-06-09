@@ -111,7 +111,7 @@ a:hover #icone-carrinho{
 
 .item-produto{
 	border:1px solid #808080;
-	height: 170px;
+	height: 190px;
 	padding: 0!important;
 	text-align: center
 }
@@ -122,17 +122,17 @@ a:hover #icone-carrinho{
 
 .botoes-produto{
 	width: 100%;
-	height: 170px;
+	height: 190px;
 	text-align: center;
 	position:absolute;
 	top:0px;
 	display: none;
 	background: rgba(50,50,50,0.5);
-	padding-top: 70px
+	padding-top: 90px
 }
 
 .descricao-produto{
-	height: 20px;
+	height: 40px;
 }
 
 .preco-produto{

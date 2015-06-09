@@ -9,6 +9,7 @@ class Shop extends CI_Controller {
 		//$this->load->library('session');
 		$this->load->model('Login_model', 'Login_Model');
 		$this->load->model('VitrineLoja_Model', 'VitrineLoja_Model'); 
+		$this->load->model('Produto_Model', 'Produto_Model'); 
 	}
 	
 	public function index()
@@ -48,33 +49,32 @@ class Shop extends CI_Controller {
 		$dados['banners'] = $banners;
 		$dados['produtos'] = array();
 		
-
+		$produtos = $this->Produto_Model->get(array('codloja'=>$cod));
 		
-		if($categoria){
-			$cont = 6;
-			for($i = 0; $i < 40; $i += 6){
-				//$dados['produtos'][] = array();
-				$row = array();
-				for($j = $i; ($j < $cont) && ($j < 40); $j++){
-				 	$row[] = $j;
-				}
-				$dados['produtos'][] = $row;
-				$cont+=6;
-			}			
+		$qtdProdutos = 0;
+		foreach($produtos as $p){
+			$qtdProdutos++;
 		}
-		else {
-			$cont = 6;
-			for($i = 0; $i < 40; $i += 6){
-				//$dados['produtos'][] = array();
-				$row = array();
-				for($j = $i; ($j < $cont) && ($j < 40); $j++){
-				 	$row[] = $j;
-				}
+		
+		$step = 6;
+		$row = array();
+		foreach($produtos as $i=>$p){
+			if(!$p->img){
+				$p->img = 'produto_default.jpg';
+			}
+			if($categoria){
+				if($p->tipo == $categoria)
+					$row[] = $p;
+			}
+			else
+				$row[] = $p;
+			
+			if((($i+1) % 6 == 0) || ($i == $qtdProdutos-1)){
 				$dados['produtos'][] = $row;
-				$cont+=6;
+				$row = array();	
 			}
 		}
-
+		
 		$this->template->load('templates/loja', 'shop/loja', $dados);		
 	}
 	

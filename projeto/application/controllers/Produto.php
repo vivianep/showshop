@@ -17,26 +17,20 @@ class Produto extends CI_Controller {
 	}
 
 	public function atualizar_produto() {
-		
 		$query=$this->Produto_Model->get_produtos();
 		$data['query']=$query;
 		$this->template->load('templates/painel', 'painel/atualizar_produto', $data);
-	
 	}
 
 	public function editar_produto() {
 		$this->template->load('templates/painel', 'painel/editar_produto');
 	}
 
-	
-
 	public function modal_editar($cod) {
-		var_dump($cod);
-		$query=$this->Produto_Model->get_byCod($cod[0]);
-		$data['query']=$query;
-		$this->load->view('painel/modal_editar',$data);
-		
-		
+		$data = array();
+		$query = $this->Produto_Model->get(array('cod'=>$cod))[0];
+		$data['produto'] = $query;
+		$this->load->view('painel/modal_editar', $data);		
 	}
 
 	public function cadastrar_produto() {
@@ -44,8 +38,6 @@ class Produto extends CI_Controller {
 		$dados = array();
 		$dados['loja'] = $this->Loja_Model->get(array('cod'=>$codloja))[0];
 		$this->template->load('templates/painel', 'painel/cadastrar_produto',$dados);
-
-
 	}
 
 	public function remover_produto() {
@@ -64,6 +56,7 @@ class Produto extends CI_Controller {
 		$tipo         = $this->input->post('tipo');
 		$marca        = $this->input->post('marca');
 		$tam          = $this->input->post('tam');
+		$cod 		  = $this->input->post('cod');
 		
 		$dados = array(
 			'codloja' => $codloja,
@@ -74,32 +67,29 @@ class Produto extends CI_Controller {
 			'quantidade' => $quantidade,
 			'tipo' => $tipo,
 			'marca' => $marca,
-			'tam' => $tam,
+			'tam' => $tam				
+		);
 				
-		);	
-
+		if($cod){
+			$dados['cod'] = $cod;
+			$this->Produto_Model->update($dados);	
+		}
+		else{
+			$cod = $this->Produto_Model->post($dados);
+		}
+		
+		$img_produto    = $cod.'.jpg';
+		move_uploaded_file($_FILES['img-produto']['tmp_name'], 'imagens/produtos/'.$img_produto);
 		
 
-		$cod = $this->Produto_Model->post($dados);
-
-		
-		
-
-		
-			$img_produto    = $cod.'.jpg';
-			move_uploaded_file($_FILES['img-produto']['tmp_name'], 'imagens/produtos/'.$img_produto);
-		
-
-		$itens = array(
-			
+		$itens = array(			
 			'img' => $img_produto,
 			'serial' => '1111',
 			'cod'  => $cod			
 		);
 		
 		$this->Produto_Model->update($itens);
-
-		$this->index($cod);
+		redirect('produto/atualizar_produto');
 	}
 
 

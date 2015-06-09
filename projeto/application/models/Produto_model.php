@@ -3,16 +3,10 @@
 class Produto_Model extends CI_Model {
 	
 	public function get($condicao = array()){
-		$this->db->select('cod, codloja, serial, nome, descr, preco, quantidade, tipo, marca, tam');
+		$this->db->select('cod, codloja, serial, nome, descr, preco, quantidade, tipo, marca, tam, img');
 		$this->db->where($condicao);
 		$this->db->from('produto');
 		return $this->db->get()->result();
-	}
-
-	public function get_byCod($cod){
-		
-		$query = $this->db->get_where('produto', array('cod' => $cod));
-		return $query;
 	}
 	
 	public function getBusca($termo){

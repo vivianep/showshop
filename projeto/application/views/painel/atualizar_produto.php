@@ -15,7 +15,7 @@
 						</div> <!-- /.form-group -->
 					</form> 
 					  
-					<table id="example2" class="table table-bordered table-hover">
+					<table class="table table-bordered table-hover">
 						<thead>
 							<tr>
 								<th>Nome do Produto</th>
@@ -42,7 +42,7 @@
 									</form>
 									</td>
 									<td>
-									<button class="edit-btn"  data-editar="<?php echo $row->cod; ?>" >"Editar"</button>
+										<button class="edit-btn" data-editar="<?php echo $row->cod; ?>">Editar</button>
 									</td>
 								</tr>
 							<?php } ?>	
@@ -53,15 +53,15 @@
 		</div>
 	</section>
 </div>
+
 <div id="modal-edit-prod" class="modal fade"></div>
+
 <script type="text/javascript">                       
 	$(function() {	
-		
-	  	$(".edit-btn").click(function(){
-	      $("#modal-edit-prod").load("modal_editar", {cod: "11"}).modal();
-	    
-  	});
-});
-  
-
+		$(".edit-btn").click(function(){
+		 	$("#modal-edit-prod").load("modal_editar/"+$(this).attr("data-editar"), function(){
+				 $("#modal-edit-prod").modal();
+			 });	    
+  		});
+	});
 </script>

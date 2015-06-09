@@ -10,18 +10,13 @@ class Loja_Model extends CI_Model {
 		return $this->db->get()->result();
 	}
 	
-	/*public function get(){	
-		$query=$this->db->get('loja');
-		return $query;
-	}*/
-	
 	public function getBusca($termo){
 		$query = $this->db->query('select * from loja where nome LIKE \'%'.$termo.'%\'');// or descricao LIKE \'%'.$termo.'%\'');	
 		return $query;
 	}
 	
 	public function get_categorias($codloja){
-		$this->db->distinct('tipo');
+		$this->db->select('DISTINCT(tipo)');
 		$this->db->where(array('codloja'=>$codloja));
 		$this->db->from('produto');
 		return $this->db->get()->result();
